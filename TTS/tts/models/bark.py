@@ -271,7 +271,11 @@ class Bark(BaseTTS):
         self.config.LOCAL_MODEL_PATHS["text"] = text_model_path
         self.config.LOCAL_MODEL_PATHS["coarse"] = coarse_model_path
         self.config.LOCAL_MODEL_PATHS["fine"] = fine_model_path
-
+        
+        # This is workaround I found. I know this is not good solution, but it works for now
+        self.config.LOCAL_MODEL_PATHS["hubert_tokenizer"] = os.path.join(checkpoint_dir, "hubert_tokenizer.pth")
+        self.config.LOCAL_MODEL_PATHS["hubert"] = os.path.join(checkpoint_dir, "hubert.pt")
+        
         self.load_bark_models()
 
         if eval:
