@@ -28,7 +28,7 @@ matplotlib
 # coqui stack
 trainer
 # config management
-coqpit>=0.0.16
+coqpit==0.0.16
 # chinese g2p deps
 jieba
 pypinyin
